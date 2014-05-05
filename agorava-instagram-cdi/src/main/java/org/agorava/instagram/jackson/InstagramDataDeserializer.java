@@ -3,9 +3,10 @@ package org.agorava.instagram.jackson;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * User: Dje
- * Date: 04/05/13
- * Time: 13:25
+ * @author Dje
+ * @author Werner Keil
+ * Date: 05/05/14
+ * Time: 02:25
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class InstagramDataDeserializer {

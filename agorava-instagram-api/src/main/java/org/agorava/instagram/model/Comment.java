@@ -1,13 +1,20 @@
 package org.agorava.instagram.model;
 
-/**
- * User: Dje
- * Date: 28/04/13
- * Time: 18:40
- */
-public class Comment {
+import org.agorava.api.storage.Identifiable;
 
-    private final String id;
+/**
+ * @author Dje
+ * @author Werner Keil
+ * Date: 05/05/14
+ * Time: 02:40
+ */
+public class Comment implements Identifiable {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6039490325640989084L;
+	private final String id;
     private final Long createdTime;
     private final String text;
     private final InstagramProfile from;

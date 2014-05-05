@@ -3,13 +3,18 @@ package org.agorava.instagram.model;
 import org.agorava.spi.UserProfile;
 
 /**
- * User: Dje
- * Date: 19/04/13
- * Time: 23:48
+ * @author Dje
+ * @author Werner Keil
+ * Date: 05/05/14
+ * Time: 02:38
  */
 public class InstagramProfile extends UserProfile {
 
-    private final String userName;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5831319742362178758L;
+	private final String userName;
     private final String fullName;
     private final String profileImageUrl;
     private String bio;

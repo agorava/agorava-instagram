@@ -118,17 +118,14 @@ public class InstagramProfile extends UserProfile {
     	}
     }
 
-	@Override
 	public String getFirstName() {
 		return getFullNamePart(Part.First);
 	}
 
-	@Override
 	public String getLastName() {
 		return getFullNamePart(Part.Last);
 	}
 
-	@Override
 	public String getEmail() {
 		return email;
 	}

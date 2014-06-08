@@ -21,11 +21,11 @@ import org.agorava.spi.UserProfile;
 /**
  * @author Dje
  * @author Werner Keil
- * Date: 05/05/14
- * Time: 02:38
+ * Date: 06/07/14
+ * Time: 17:31
  */
 public class InstagramProfile extends UserProfile {
-
+	
 	/**
 	 * 
 	 */
@@ -36,6 +36,7 @@ public class InstagramProfile extends UserProfile {
     private String bio;
     private String website;
     private Count count;
+    private String email;
 
     public InstagramProfile(String id, String userName, String fullName, String profileImageUrl) {
         super(id);
@@ -81,6 +82,10 @@ public class InstagramProfile extends UserProfile {
     public void setCount(Count count) {
         this.count = count;
     }
+    
+    public void setEmail(String mail) {
+        this.email = mail;
+    }
 
     @Override
     public String toString() {
@@ -93,4 +98,38 @@ public class InstagramProfile extends UserProfile {
         sb.append('}');
         return sb.toString();
     }
+    
+    static enum Part {
+    	First, Last
+    }
+    
+    private String getFullNamePart(Part part) {
+    	if (fullName!= null && fullName.length()>0) {
+    		final String[] nameParts = fullName.split(" ");
+    		switch (part) {
+    		case First:
+    			// TODO add better bound checks
+    			return nameParts[0];
+			default:
+				return nameParts[1];
+    		}
+    	} else {
+    		return "";
+    	}
+    }
+
+	@Override
+	public String getFirstName() {
+		return getFullNamePart(Part.First);
+	}
+
+	@Override
+	public String getLastName() {
+		return getFullNamePart(Part.Last);
+	}
+
+	@Override
+	public String getEmail() {
+		return email;
+	}
 }
